@@ -1,15 +1,15 @@
 class SiteController {
-    //[GET]/NEWS
-    index(req, res){
-        res.render('home');
-    }
+  //[GET]/NEWS
+  index(req, res) {
+    res.render('home');
+  }
 
-    //Show [GET] news/:slug
+  //Show [GET] news/:slug
 
-    search(req, res){
-        res.send('News Detail!!!!');
-    }
+  search(req, res) {
+    res.send('News Detail!!!!');
+  }
 }
 
-module.exports = new SiteController; 
+module.exports = new SiteController();
 const siteController = require('./SiteController');
