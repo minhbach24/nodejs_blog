@@ -17,6 +17,20 @@ class CoursesController {
         res.render('courses/create');
     }
 
+    edit(req, res, next) {
+        Course.findById(req.params.id)
+        .then(course => res.render('courses/edit',{
+            course: mongooseToObject(course)
+        })).catch(next);
+        
+    }
+
+    update(req,res,next){
+        Course.updateOne({_id:req.params.id},req.body)
+        .then(()=> res.redirect('/me/stored/courses'))
+        .catch(next);
+    }
+    //Show Course
     store(req, res, next) {
         const formData = req.body;
         // console.log(formData);
